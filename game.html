@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Daud Mohamed's Portfolio, a student at St. Paul College, MN.">
+    <!-- Bootstrap Stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- Font Awesome Stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/176ce1b3f9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Daud So Good :: Game</title>
+    <!-- Place this CSS into the <head> section-->
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-image: url('images/gamebg.webp');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<!--Replace the <body> with this next line of code. This is what starts the game. -->
+
+<body onload="startGame()">
+    <header>
+        <img src="images/logo.png" alt="logo" height="100px" width="150px">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a>&nbsp;&nbsp;</li>
+            <li><a href="resume.html">Resume</a>&nbsp;&nbsp;</li>
+            <li><a href="portfolio.html">Portfolio</a>&nbsp;&nbsp;</li>
+            <li><a href="game.html">Game</a>&nbsp;&nbsp;</li>
+            <li><a href="contact.html">Contact Me</a>&nbsp;&nbsp;</li>
+        </ul>
+    </nav>
+
+    <main class="game">
+        <h3 style="text-align: center;">Flappy Bird</h3>
+        <p>I made this game in the W3Schools JavaScript Tutorial. Then I enhanced the game by making it larger, adding CSS, and a background image to the game.
+        </p>
+        <p>Press <strong>accelerate</strong>  to jump through the obstacles</p>
+        <p>You can <strong>pause</strong> or <strong>resume</strong> your game at any point in time</p>
+        <p>Too easy? Try flying at rocket speed</p>
+
+
+        <!-- This code will go into the <main> section. This div holds the game and game button -->
+        <div id="game">
+            <button class="btn" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">
+                <i class="fa-solid fa-rocket"></i>
+                Accelerate
+            </button>
+            <button class="btn" onclick="pauseResumeGame()">
+                <i class="fa-regular fa-circle-pause"></i>
+                Pause/Resume</button>
+            <button class="btn" onclick="setGameSpeed(1)">
+                <i class="fa-solid fa-gauge"></i>
+                Easy</button>
+            <button class="btn" onclick="setGameSpeed(1.5)">
+                <i class="fa-solid fa-gauge-high"></i>
+                Medium</button>
+            <button class="btn" onclick="setGameSpeed(2)">
+                <i class="fa-solid fa-jet-fighter"></i>
+                Hard</button>
+            <a href=""><button class="btn">
+                    <i class="fa-solid fa-rotate"></i>
+                    Restart</button></a>
+        </div>
+
+        <!-- This is the JavaScript for the game it goes into the <main> section underneath the code above-->
+        <script>
+            var myGamePiece;
+            var myObstacles = [];
+            var myScore;
+
+            function startGame() {
+                myGamePiece = new component(30, 30, "images/player.gif", 10, 120, "image");
+                myGamePiece.gravity = 0.05;
+                myScore = new component("30px", "Arial", "blue", 42, 40, "text");
+                myGameArea.start();
+            }
+
+            var myGameArea = {
+                canvas: document.createElement("canvas"),
+                start: function () {
+                    this.canvas.width = 630;
+                    this.canvas.height = 420;
+                    this.context = this.canvas.getContext("2d");
+                    var myGame = document.getElementById("game");
+                    myGame.insertBefore(this.canvas, myGame.childNodes[0]);
+                    this.frameNo = 0;
+                    this.interval = setInterval(updateGameArea, 20);
+                },
+                clear: function () {
+                    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                }
+            }
+
+            function component(width, height, color, x, y, type) {
+                this.type = type;
+                if (type == "image") {
+                    this.image = new Image();
+                    this.image.src = color;
+                }
+                this.score = 0;
+                this.width = width;
+                this.height = height;
+                this.speedX = 0;
+                this.speedY = 0;
+                this.x = x;
+                this.y = y;
+                this.gravity = 0;
+                this.gravitySpeed = 0;
+                this.update = function () {
+                    ctx = myGameArea.context;
+                    if (this.type == "image") {
+                        ctx.drawImage(this.image,
+                            this.x,
+                            this.y,
+                            this.width, this.height);
+                    } else
+                        if (this.type == "text") {
+                            ctx.font = this.width + " " + this.height;
+                            ctx.fillStyle = color;
+                            ctx.fillText(this.text, this.x, this.y);
+                        } else {
+                            ctx.fillStyle = color;
+                            ctx.fillRect(this.x, this.y, this.width, this.height);
+                        }
+                }
+                this.newPos = function () {
+                    this.gravitySpeed += this.gravity;
+                    this.x += this.speedX;
+                    this.y += this.speedY + this.gravitySpeed;
+                    this.hitBottom();
+                }
+                this.hitBottom = function () {
+                    var rockbottom = myGameArea.canvas.height - this.height;
+                    if (this.y > rockbottom) {
+                        this.y = rockbottom;
+                        this.gravitySpeed = 0;
+                    }
+                }
+                this.crashWith = function (otherobj) {
+                    var myleft = this.x;
+                    var myright = this.x + (this.width);
+                    var mytop = this.y;
+                    var mybottom = this.y + (this.height);
+                    var otherleft = otherobj.x;
+                    var otherright = otherobj.x + (otherobj.width);
+                    var othertop = otherobj.y;
+                    var otherbottom = otherobj.y + (otherobj.height);
+                    var crash = true;
+                    if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                        crash = false;
+                    }
+                    return crash;
+                }
+            }
+
+            function updateGameArea() {
+                var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+                for (i = 0; i < myObstacles.length; i += 1) {
+                    if (myGamePiece.crashWith(myObstacles[i])) {
+                        return;
+                    }
+                }
+                myGameArea.clear();
+                myGameArea.frameNo += 1;
+                if (myGameArea.frameNo == 1 || everyinterval(150)) {
+                    x = myGameArea.canvas.width;
+                    minHeight = 20;
+                    maxHeight = 200;
+                    height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
+                    minGap = 50;
+                    maxGap = 200;
+                    gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+                    myObstacles.push(new component(20, height, "#0F9D58", x, 0));
+                    myObstacles.push(new component(20, x - height - gap, "#0F9D58", x, height + gap));
+                }
+                for (i = 0; i < myObstacles.length; i += 1) {
+                    myObstacles[i].x += -1;
+                    myObstacles[i].update();
+                }
+                myScore.text = "SCORE: " + myGameArea.frameNo;
+                myScore.update();
+                myGamePiece.newPos();
+                myGamePiece.update();
+            }
+
+            function everyinterval(n) {
+                if ((myGameArea.frameNo / n) % 1 == 0) { return true; }
+                return false;
+            }
+
+            function accelerate(n) {
+                myGamePiece.gravity = n;
+            }
+
+            function pauseResumeGame() {
+                if (myGameArea.interval) {
+                    clearInterval(myGameArea.interval);
+                    myGameArea.interval = null;
+                } else {
+                    myGameArea.interval = setInterval(updateGameArea, 20);
+                }
+            }
+
+            function setGameSpeed(speed) {
+                clearInterval(myGameArea.interval);
+                myGameArea.interval = setInterval(updateGameArea, 20 / speed);
+            }
+        </script>
+
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2>Sample Portfolio Website for Web Development Students</h2>
+                    <p>
+                        This website is a sample portfolio website made for students at Saint Paul College.
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <h2>Let's Connect!</h2>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/mohamed-daud-3314292a5/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a href="mailto: Daudmo975@hotmail.com" target="_blank"><i class="fa fa-envelope"></i> Email</a></li>
+                            <li><a href="https://github.com/Mohameddaud1" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid-copyright">
+            <div class="row">
+                <div class="col-sm-12">
+                    <small>&copy; Mohamed Daud. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--jQuery, Popper, and Bootstrap Javascript files-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

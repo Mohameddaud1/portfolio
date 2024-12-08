@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta name="description" content="This is Daud Mohamed's Portfolio, a student at St. Paul College, MN.">
+    <title>Daud So Good :: Home</title>
+    <!-- Bootstrap Stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- Font Awesome Stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo" height="100px" width="150px">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a>&nbsp;&nbsp;</li>
+            <li><a href="resume.html">Resume</a>&nbsp;&nbsp;</li>
+            <li><a href="portfolio.html">Portfolio</a>&nbsp;&nbsp;</li>
+            <li><a href="game.html">Game</a>&nbsp;&nbsp;</li>
+            <li><a href="contact.html">Contact Me</a>&nbsp;&nbsp;</li>
+        </ul>
+    </nav>
+
+    <div class="home-hero">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                        <h1>Welcome to  My Portfolio</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <h1>About Me</h1>
+                    <img src="images/selfie.webp" alt="selfie" class="float-right">
+
+                    <p>My name is Daud Mohamed, and I’m currently studying Web Design and Web Programming at Saint Paul College in St. Paul, Minnesota, with a planned graduation date of December 2025. I am working toward obtaining Web Design and Web Development Certificates, which will enhance my skills and credentials in this dynamic field. This website serves as a portfolio showcasing my abilities in web development and design. </p>
+                    <p>
+                    I have taken the following classes at Saint Paul College:
+                    <li> Web Fundamentals, where I learned HTML and CSS</li>
+                    <li>Computer Science and Information Systems</li>
+                    <li>Introduction to Computing and Programming Concepts</li>
+                    </p>
+                    <p>
+                    Looking ahead, I am excited about next semester, where I’ll be delving into Client-Side Programming and Web Design. Additionally, I plan to complete Adobe Photoshop and Illustrator certifications, which will complement my design skills.
+                    </p>
+                    <p>
+                    Outside of academics, I enjoy immersing myself in video games, reading science fiction, practicing guitar, and playing Magic: The Gathering. Each of these hobbies inspires creativity and strategic thinking, which I bring to my work in web development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1>Resume</h1>
+                    <img src="images/resume.webp" alt="resume" height="200px" width="200px">
+                    <p>Check out my resume! I am always looking for coding opportunities.</p>
+                    <a href="resume.html"><button>Learn More</button></a>
+
+                </div>
+                <div class="col-sm-4">
+                    <h1>Portfolio</h1>
+                    <img src="images/portfolio.webp" alt="portfolio" height="200px" width="200px">
+                    <p>My portfolio includes websites as well as some special HTLML/CSS projects</p>
+                    <a href="portfolio.html"><button>Learn More</button></a>
+
+                </div>
+                <div class="col-sm-4">
+                    <h1>Game</h1>
+                    <img src="images/game.webp" alt="game" height="200px" width="200px">
+                    <p>I made my custom version of the W3 Schools Javascript game.</p>
+                    <a href="game.html"><button>Learn More</button></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h1>Some of My Best Photos Collection</h1>
+                <p>I made this photo gallery in Javascript. It includes animal photgraphs I found on <a href="pixabay.com">Pixabay.com</a></p>
+                <!-- column -->
+                <div class="col-sm-12">
+
+                    <!-- gallery -->
+                    <div class="gallery">
+
+                        <!-- preview -->
+                        <div class="preview">
+                            <img id="preview" src="images/toad.jpg" style="display:block;margin:0 auto;" alt=""
+                                height="600" width="800" />
+                        </div>
+                        <!-- end of preview -->
+
+                        <!-- thumbnail gallery -->
+                        <div class="gallery-thumbnails" style="margin:0 auto;text-align:center">
+                            <img onclick="document.getElementById('preview').src=document.getElementById('img1').src"
+                                id="img1" src="images/bison.jpg" alt="bison" />
+                            <img onclick="document.getElementById('preview').src= document.getElementById('img2').src;"
+                                id="img2" src="images/deer.jpg" alt="deer" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img3').src;"
+                                id="img3" src="images/fox.jpg" alt="fox" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img4').src;"
+                                id="img4" src="images/hedgehog.jpg" alt="hedgehog" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img5').src;"
+                                id="img5" src="images/otter.jpg" alt="otter" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img6').src;"
+                                id="img6" src="images/rabbit.jpg" alt="rabbit" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img7').src;"
+                                id="img7" src="images/sheep.jpg" alt="sheep" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img8').src;"
+                                id="img8" src="images/spider.jpg" alt="spider" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img9').src;"
+                                id="img9" src="images/toad.jpg" alt="toad" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img10').src;"
+                                id="img10" src="images/turtle.jpg" alt="turtle" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img11').src;"
+                                id="img11" src="images/lizard.jpg" alt="lizard" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img12').src;"
+                                id="img12" src="images/eagle2.jpg" alt="eagle" />
+                        </div>
+                        <!-- end of thumbnail gallery -->
+                    </div>
+                    <!-- end of gallery -->
+                </div>
+                <!-- end of column -->
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2>Sample Portfolio Website for Web Development Students</h2>
+                    <p>
+                        This website is a sample portfolio website made for students at Saint Paul College.
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <h2>Let's Connect!</h2>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/mohamed-daud-3314292a5/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a href="mailto: Daudmo975@hotmail.com" target="_blank"><i class="fa fa-envelope"></i> Email</a></li>
+                            <li><a href="https://github.com/Mohameddaud1" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid-copyright">
+            <div class="row">
+                <div class="col-sm-12">
+                    <small>&copy; Mohamed Daud. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--jQuery, Popper, and Bootstrap Javascript files-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
