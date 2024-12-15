@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results so it is important to write a high quality description for each page of a website">
+    <title>Animal Photography::Home</title>
+    <!-- Bootstrap Stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- Font Awesome Stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Local Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Animal Photography</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a>&nbsp;&nbsp;</li>
+            <li><a href="gallery.html">Gallery</a>&nbsp;&nbsp;</li>
+            <li><a href="about.html">About</a>&nbsp;&nbsp;</li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="home-hero">
+                        <img src="images/eagle.jpg" alt="eagle" width="1200px" height="400px" class="img-fluid">
+                    </div>
+                     <img src="images/camera-svgrepo-com.svg" alt="camera" class="float-left">
+                    <blockquote>
+                        The website features photographs of animals from Pixabay.com. The key to animal photography is patience. It can take a long time to get the right lighting and the best view of the animal. When photographing animals, you do not have a lot of control... you need to wait for them.
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="row">
+    
+                <!-- column -->
+                <div class="col-sm-12">
+
+                    <!-- gallery -->
+                    <div class="gallery">
+
+                        <!-- preview -->
+                        <div class="preview">
+                            <img id="preview" src="images/toad.jpg" style="display:block;margin:0 auto;" alt=""
+                                height="600" width="800" />
+                        </div>
+                        <!-- end of preview -->
+
+                        <!-- thumbnail gallery -->
+                        <div class="gallery-thumbnails" style="margin:0 auto;text-align:center">
+                            <img onclick="document.getElementById('preview').src=document.getElementById('img1').src"
+                                id="img1" src="images/bison.jpg" alt="bison" />
+                            <img onclick="document.getElementById('preview').src= document.getElementById('img2').src;"
+                                id="img2" src="images/deer.jpg" alt="deer" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img3').src;"
+                                id="img3" src="images/fox.jpg" alt="fox" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img4').src;"
+                                id="img4" src="images/hedgehog.jpg" alt="hedgehog" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img5').src;"
+                                id="img5" src="images/otter.jpg" alt="otter" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img6').src;"
+                                id="img6" src="images/rabbit.jpg" alt="rabbit" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img7').src;"
+                                id="img7" src="images/sheep.jpg" alt="sheep" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img8').src;"
+                                id="img8" src="images/spider.jpg" alt="spider" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img9').src;"
+                                id="img9" src="images/toad.jpg" alt="toad" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img10').src;"
+                                id="img10" src="images/turtle.jpg" alt="turtle" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img11').src;"
+                                id="img11" src="images/lizard.jpg" alt="lizard" />
+                            <img onclick="document.getElementById('preview').src = document.getElementById('img12').src;"
+                                id="img12" src="images/eagle2.jpg" alt="eagle" />
+                        </div>
+                        <!-- end of thumbnail gallery -->
+                    </div>
+                    <!-- end of gallery -->
+                </div>
+                <!-- end of column -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2>Web Design Exercise</h2>
+                    <p>
+                        Animal Photography is a website exercise on image galleries available on WebDevStudents.com. The images are royalty-free photos from pixabay.com. JavaScript was used to make the photo gallery, and Bootstrap columns for responsive layout.
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                        <h2>Connect with Animal Photography</h2>
+                        <ul>
+                            <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
+                            <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <small>&copy; Mohamed Daud. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!--jQuery, Popper, and Bootstrap Javascript files-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

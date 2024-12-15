@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Oldenburg:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:ital,wght@0,400;1,900&display=swap');
+
+body{
+    font-family: "Sour Gummy", cursive;
+    color: chocolate;
+    margin: 0;
+    background-image: url(images/paw.webp);
+    background-color: #b0883c;
+}
+
+
+h1 {
+    font-family: "Atma", cursive;
+    color:  wheat;
+    text-shadow: black 2px 2px 4px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+header{
+    text-align: center;
+}
+
+/* Navigation */
+nav{
+    background-color: #694c08;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 5px;
+    font-family: "Oldenburg", cursive;
+}
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 8px 0;
+    padding: 0;
+}
+
+nav li{
+    display: inline;
+    padding: 5px;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a:link{
+    color: white;
+}
+
+nav a:visited{
+    color: white;
+}
+
+nav a:hover{
+    padding: 10px;
+    color: #f6d774;
+    text-decoration: none;
+    background-color: #b0883c;
+    border-radius: 5px;
+}
+
+nav a:active{
+    color: violet;
+}
+
+/* website links except the nav */
+a:link{
+    color: #382a00;
+}
+
+a:visited{
+    color: #b300b3;
+}
+
+a:hover{
+    color: #f6d774;
+}
+
+a:active{
+    color: black;
+}
+
+/* Main */
+main{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.home-hero{
+    border: 2px solid goldenrod;
+    margin-top: 5px;
+    background-image: url(images/header.jpg);
+    height: 475px;
+    background-size: cover;
+    background-position: center;
+    columns: #042837;
+    padding: 10px 10px 10px 30px;;
+}
+
+.home-hero h2{
+    font-family: "Atma", cursive;
+    font-size: 3em;
+    color: #f6d774;
+    text-shadow: 2px 2px 2px black;
+}
+
+.home-hero h3{
+    font-family: "Oldenburg", cursive;
+    font-size: 1.5em;
+    color: #f6d774;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+blockquote{
+    background-color: goldenrod;
+    border-left: 10px solid gray;
+    padding: 30px;
+    font-family: "Atma", cursive;
+    font-size: 1.5em;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.container-fluid{
+    background-color: #f6d774;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.image-fluid{
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    transition: transform 0.3s ease;
+}
+
+.image-fluid:hover{
+    transform: scale(1.05);
+}
+
+.btn-pup {
+    background-color: #694c08;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.btn-pup h3{
+    font-family: "Atma", cursive;
+    color: #f6d774;
+    font-size: 1.5em;
+}
+
+.btn-pup:hover{
+    background-color: #b0883c;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer{
+    border-top: black 3px solid;
+    text-align: center;
+    background-color: #694c08;
+    font-family: "Oldenburg", cursive;
+    color: wheat;
+    padding-bottom: 20px;
+}
+
+.footer-container-fluid{
+    background-color: #694c08;
+    color: wheat;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .fa{
+    font-size: 1.5em;
+    padding: 10px;
+    color: #b0883c;
+    transition: transform 0.3s ease;
+}
+
+footer .fa:hover{
+    color: #f6d774;
+    transform: scale(1.2);
+}
+
+/* CSS without a media query -- applies to all sizes unless overridden */
+h1{
+    font-size: 4em;
+}
+
+/* CSS adjustments for tablets */
+@media only sreen and (max-width: 1024px){
+    h1{
+        font-size: 1.8em;
+    }
+}
+
+
+/* CSS adjustments for smartphones */
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: 1.5em;
+    }
+}
