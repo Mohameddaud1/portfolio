@@ -365,7 +365,6 @@ footer{
 }
 
 footer .container-fluid{
-    max-width: 800px;
     text-align: left;
     padding: 20px;
 }
