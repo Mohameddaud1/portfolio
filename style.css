@@ -32,7 +32,7 @@ header{
 }
 
 header img{
-    padding-top: 10px;
+    padding: 20px;
     padding-bottom: 20px;
     float: center;
 }
@@ -131,9 +131,9 @@ a:active{
 
 /* Main */
 main{
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 10px;
+    padding: 50px;
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     color: black;
@@ -153,9 +153,14 @@ main h1{
     font-size: 2em;
 }
 
+hr{
+    border: 1px solid black;
+}
+
 .game{
-    max-width: 660px;
+    max-width: 700px;
     margin: 10px auto;
+    padding: 20px;
 }
 
 main.game:hover{
@@ -215,10 +220,32 @@ main.game:hover{
     border-radius: 10px;
 }
 
+.float-left{
+    float: left;
+    max-width: auto;
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
 .row .col-sm-4{
     margin-top: 20px;
     text-align: center;
     margin-bottom: 50px;
+}
+
+#bib-float-right{
+    float: right;
+    max-width: auto;
+    height: 250px;
+    width: 300px;
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .row .col-sm-4 h1{
@@ -256,44 +283,6 @@ button:hover{
     text-align: center;
 }
 
-
-/* gallery */
-.gallery .preview{
-    width: 100%;
-    height: auto;
-}
-
-.gallery .gallery-thumbnails img {
-    width: 100px;
-    height: 75px;
-    margin: 3px 10px 10px 0;    
-}
-
-.gallery .gallery-thumbnails img:hover {
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.gallery .preview img#preview {
-    padding: 1px;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto !important;
-    display: block !important;
-    border: #E9E991 2px solid;
-}
-
-.gallery-thumbnails{
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin: 0 auto;
-    width: 80%;
-    scrollbar-width: thin;
-    scrollbar-color: #91b247 #d2e459;
-    background-color: #F1EFE1;
-}
-
 /* contact */
 .contact-me{
     text-align: center;
@@ -324,7 +313,7 @@ input, textarea{
     border: 2px solid black;
     border-radius: 5px;
     background-color: #ffec9f;
-    color: white;
+    color: black;
     font-family: "Lato", sans-serif;
     font-size: medium;
 }
@@ -361,7 +350,9 @@ textarea{
     width: 50%;
 }
 
-
+.resume{
+    max-width: 800px;
+}
 
 /* Footer */
 footer{
@@ -422,5 +413,19 @@ h1{
 @media only screen and (max-width: 768px){
     h1{
         font-size: 1.5em;
+    }
+}
+/* JavaScript Game changes for mobile */
+.game-controls-mobile{
+    display:none;
+}
+
+@media only screen and (max-width: 768px){
+    .game-controls-desktop{
+        display:none;
+    }
+    .game-controls-mobile{
+        display: block;
+        touch-action: manipulation;
     }
 }
